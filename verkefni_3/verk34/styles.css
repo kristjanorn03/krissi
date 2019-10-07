@@ -1,0 +1,70 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0 auto;
+    max-width: 60em; /* = 960px = 1080px fartölvusskjár*/
+    font-family: 'Antic Slab', serif;
+    background-color: #9B539C;
+}
+/* -- GRID AREA -- */
+.haus {
+    grid-area: haus;
+    text-align: center;
+}
+.container {
+    grid-area: main;
+}
+.topnav  {
+    grid-area: topnav;
+}
+.foot {
+    grid-area: foot;
+}
+/* dalkar í container */
+.as1 {
+    grid-area: as1;
+    /*border-right: solid blue;*/
+    padding-right: 1em;
+    background-color: #E9BC1B;
+}
+.as2 {
+    grid-area: as2;
+    /*border-left: solid blue;*/
+    background-color: #E9BC1B;
+}
+.art1 {
+    grid-area: art1;
+    background-color: #CA171B;
+}
+/* -- Grid template area -- */
+.body {
+    display:grid;
+    grid-gap:1em;
+    grid-template-areas: 
+       "topnav"
+       "haus"
+       "main"
+       "foot"
+}
+/* -- innri tög i main-- */
+.main {
+    display:grid;
+    grid-gap:1em;
+    grid-template-areas: 
+        "art1 art1"
+        "as1 as2";
+        grid-template-columns: 1fr 1fr;
+}
+/* -- flex box --*/
+.topmenu, .footmenu {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    margin:0;
+    padding:1em;
+    background-color: #FF9900;
+} 
+.topmenu li, .footmenu li {
+   list-style-type: none
+}
